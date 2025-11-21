@@ -133,3 +133,33 @@ This documentation serves as context when developing features and can be used wi
 The following environment variables must be set:
 
 - `SQLITE_DB_PATH`: Full path to the SQLite database file you want to explore
+
+
+## 🚀 New Enterprise Features
+
+### Multi-Database Support
+Perfect for enterprise environments with multiple tenant databases:
+- Access different databases using the `database` parameter in `read_query`
+- Seamlessly switch between development, staging, and production databases
+- Support for customer-specific database files
+
+```
+result = read_query("SELECT COUNT(*) FROM orders", database="/data/tenant_abc.sqlite")
+customer_data = read_query("SELECT * FROM users", database="/enterprise/customer_123.sqlite")
+```
+
+### Database Maintenance & Optimization Tools
+Automated database maintenance for production environments:
+
+- **`optimize_database(aggressive=True)`** - Deep database optimization 
+- **`backup_database(path)`** - Instant database backups to any location
+- **`clear_database_cache()`** - Performance optimization through cache clearing
+
+
+### 🤖 AI-Powered Query Analysis
+Revolutionary AI integration for intelligent database management:
+
+- **`explain_query_with_ai()`** - Get expert AI explanations of complex queries
+- **`ai_database_doctor()`** - Automated AI-driven database issue resolution
+- **Auto-execution of AI suggestions** - Streamlined optimization workflow
+
